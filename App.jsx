@@ -68,23 +68,12 @@ export default function App() {
 	}) 
 /* Note: formData.rating and formData.marketingResponse should be in the dependency of this useEffect, but I haven't included it because I wanted to declare the formData state below just to isolate the code that's directly relevant to the challenge from the rest of the code.*/
 	
-	
-	
-	
-	
+		
 	
 /* 
 	🚨  Note: None of the code above is directly relevant to the challenge. None of it should be 
 	    modified, and you don't even need to look at it (although you're welcome to read it if you're interested!). 
 */
-	
-	
-	
-	
-	
-	
-	
-	
 	
 	
 /* Challenge
@@ -137,6 +126,7 @@ export default function App() {
 			<input
 				type="text"
 				placeholder="First Name"
+				value={formData.firstName}
 				onChange={handleChange}
 				name="firstName"
 			/>
@@ -144,6 +134,7 @@ export default function App() {
 			<input
 				type="text"
 				placeholder="Last Name"
+				value={formData.lastName}
 				onChange={handleChange}
 				name="lastName"
 			/>
@@ -151,6 +142,7 @@ export default function App() {
 			<input
 				type="email"
 				placeholder="Email"
+				value={formData.email}
 				onChange={handleChange}
 				name="email"
 			/>
@@ -165,6 +157,7 @@ export default function App() {
 							type="radio"
 							id="yes"
 							name="privacyResponse"
+							checked={formData.privacyResponse === "yes"}
 							value="yes"
 							onChange={handleChange}
 						/>
@@ -176,8 +169,8 @@ export default function App() {
 							type="radio"
 							id="no"
 							name="privacyResponse"
+							checked={formData.privacyResponse === "no"}
 							value="no"
-							defaultChecked
 							onChange={handleChange}
 						/>
 						No.
@@ -188,7 +181,8 @@ export default function App() {
 							type="radio"
 							id="absolutely"
 							name="privacyResponse"
-							value="absolutely"
+							checked={formData.privacyResponse === "absolutely"}
+							value="absolutel"
 							onChange={handleChange}
 						/>
 						Absolutely!
@@ -204,7 +198,7 @@ export default function App() {
 				<select 
 					onChange={handleChange} 
 					name="rating"
-					defaultValue="10"
+					value={formData.rating}
 				>
 					<option value="1">1</option>
 					<option value="2">2</option>
@@ -227,6 +221,7 @@ export default function App() {
 					type="checkbox"
 					name="marketingResponse"
 					onChange={handleChange}
+					checked={formData.marketingResponse}
 				/>
 				
 				<div className="checkmark"></div>
